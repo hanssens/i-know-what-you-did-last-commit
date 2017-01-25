@@ -1,5 +1,39 @@
 <template>
   <require from="bootstrap/css/bootstrap.css"></require>
-  
+
   <h1>${message}</h1>
+
+  <input type="text" name="company" class="form-control" value.bind="company_name" required="required" pattern="" title="">
+  <input type="text" name="username" class="form-control" value.bind="username" required="required" pattern="" title="">
+  <button type="button" class="btn btn-default" click.trigger="gather()">Go!</button>
+
+  <hr>
+
+  <div repeat.for="repo of repos">
+    <h3>${repo.name}</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="commit of repo.commits">
+          <td>
+            <a href="${commit.html_url}" target="_blank">
+              ${commit.id}
+            </a>
+          </td>
+          <td>
+            ${commit.message}
+          </td>
+          <td>
+            ${commit.when}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
