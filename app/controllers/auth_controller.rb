@@ -14,6 +14,11 @@ class AuthController < ApplicationController
     redirect_to url
   end
 
+  def logout
+    reset_session
+    redirect_to :controller => 'home', :action => 'index'
+  end
+
   def callback
 
     # fetch the user's access code from the params
@@ -25,6 +30,7 @@ class AuthController < ApplicationController
     token = client.exchange_code_for_token(code, APP_CLIENT_ID, APP_CLIENT_SECRET)
 
     # store `token.access_token` in session
+    reset_session
     session[:token] = token[:access_token]
 
     # ... and redirect to the actual app

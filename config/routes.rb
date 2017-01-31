@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'auth/login'
+  get 'auth/logout'
   get 'auth/callback'
 
   get 'commits/index'
