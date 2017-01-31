@@ -11,32 +11,47 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
-# Mono / Xamarin Studio
-*.userprefs
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
 
-# Package Manager excludes, such as NPM and Bower
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
 
-# VS2015 specifics
-.vs/
+# Only include if you have production secrets in this file, which is no longer a Rails default
+# config/secrets.yml
 
-# JetBrains
-.idea*
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
 
-# NUnit test results
-TestResult.xml
+## Environment normalization:
+/.bundle
+/vendor/bundle
 
-# Aurelia specifics: CLI
-aurelia_project/**/*.js*
-!aurelia_project/aurelia.json
-scripts/*bundle.js*
-typings/globals/
-src/environment.ts
+# these should all be checked in to normalize the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
 
-# TypeScript
-typings
-!typings/index.d.ts
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore Byebug command history file.
+.byebug_history
