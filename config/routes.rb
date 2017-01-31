@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get 'auth/login'
+  get 'auth/callback'
+
+  get 'commits/index'
+
   get 'home/index'
 
   root 'home#index'
