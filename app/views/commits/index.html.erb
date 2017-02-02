@@ -1,7 +1,27 @@
-<h1>Commits#index</h1>
-<p>Find me in app/views/commits/index.html.erb</p>
-<h3>all is well!</h3>
+<div class="container">
+    <div class="row">
 
-<p>
-foo: <%= @foo %>, token: <%= @token %>
-</p>
+        <div class="page-header">
+            <div class="pull-right">
+                <%= @user.name %>
+                    <img src="<%= @user.avatar_url %>" alt="" class="img-circle" style="width: 32px; height: 32px;">
+            </div>
+
+            <h1>Commits <small> Listing commits in progress</small></h1>
+        </div>
+
+    </div class="container">
+</div class="row">
+
+<div class="container">
+    <div class="row">
+
+        <% @repos.each do |repo| %>
+            <h3>
+                <%= repo.full_name %>
+            </h3>
+            <p>last updated on <%= repo.updated_at %></p>
+        <% end %>
+
+    </div>
+</div>
